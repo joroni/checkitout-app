@@ -1,0 +1,104 @@
+<div data-page="settings" class="page cached">
+            <div class="page-content">
+             <!-- <div class="content-block-title">Connectivity Status</div>-->
+              <div id="status"></div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-name"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">URL</div>
+                        <div class="item-input">
+                         <input id="baseurl" type="text" value=""></input>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-email"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">View</div>
+                        <div class="item-input">
+                          <input id="view" type="text" value=""></input>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-url"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Display</div>
+                        <div class="item-input">
+                          <input id="display" type="text"value=""></input>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="content-block">
+                <div class="row">
+                  <div class="col-50"><a href="#" class="button button-big button-fill color-red back link">Cancel</a></div>
+                  <div class="col-50">
+                   
+                    <input type="submit" value="Submit" onclick="saveSettings();" class="button button-big button-fill color-green">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <!-- Profile Page-->
+          <div data-page="profile" class="page cached">
+            <div class="page-content">
+              <!--<div class="content-block-title">My Profile</div>-->
+              <div id="logmsg"></div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-name"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">User ID</div>
+                        <div class="item-input">
+                          <input id="username" type="text"></input>
+                        </div>
+                         
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-email"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Password</div>
+                        <div class="item-input">
+                          <input id="password" type="password"></input>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                </ul>
+              </div>
+              <div class="content-block">
+                <div class="row">
+                  <div class="col-50"><a href="#" class="button button-big button-fill color-red back link">Cancel</a></div>
+                  <div class="col-50">
+                   
+                    <input type="submit" value="Login"  onclick="saveLogin();" class="button button-big button-fill color-green">
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        <!-- Bottom Toolbar-->
+        <div class="toolbar">
+          <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>
+        </div>
+      </div>
+    </div>
