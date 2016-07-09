@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>COE Monitoring</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="drupalgap.css" />
+    <script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+    
+     
+  </head>
+  <body onload="onBodyLoad()">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <!--<div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+        
+        
+        		
+        		
+      </div>
+    </div>-->
+    <div class="panel panel-right panel-cover layout-dark">
+      <div class="view view-right" data-page="panel-right1">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center sliding" style="left: 76px;">Right Panel</div>
+          </div>
+        </div>
+        <div class="pages navbar-through">
+          <div class="page" data-page="panel-right1">
+            <div class="page-content"> 
+              <div class="content-block">
+                <p>This is a right side panel. You can close it by clicking outsite or on this link: <a class="close-panel" href="#">close me</a>. You can put here anything, even another isolated view, try it:</p>
+              </div>
+              <div class="list-block">
+                <ul>
+                 <!-- <li><a class="item-link" href="panel-right2.html"> 
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title">Right panel page 2</div>
+                        </div>
+                      </div></a></li>
+                  <li><a class="item-link" href="panel-right3.html">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title">Right panel page 3</div>
+                        </div>
+                      </div></a></li>-->
+                      
+                      
+                      <li><a href="#about" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title">About</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#stories" class="item-link close-panel" onClick="listArticles();">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Stories</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#settings" class="item-link close-panel">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Settings</div>
+                        </div>
+                      </div></a>
+                  </li>
+                  <li><a href="#profile" class="item-link close-panel">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Profile</div>
+                        </div>
+                      </div></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <!-- Navbar inner for Index page-->
+          <div data-page="index" class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <div class="center sliding">COE Monitoring</div>
+            <div class="right">
+              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+          <!-- Navbar inner for About page-->
+          <div data-page="about" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">About Us</div>
+          </div>
+          <!-- Navbar inner for Services page-->
+          <div data-page="stories" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Stories</div>
+          </div>
+          <!-- Navbar inner for Settings page-->
+          <div data-page="settings" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Settings</div>
+          </div>
+           <!-- Navbar inner for Profile page-->
+          <div data-page="profile" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Profile</div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Index Page-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <div class="content-block-title">Welcome To My Awesome App</div>
+              <div class="content-block">
+                <div class="content-block-inner">
+                  <p>Couple of worlds here because my app is so awesome!</p>
+                  <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
+                </div>
+              </div>
+              <div class="content-block-title">What about simple navigation?</div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="#about" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title">About</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#stories" class="item-link" onClick="listArticles();">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Stories</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#settings" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Settings</div>
+                        </div>
+                      </div></a>
+                  </li>
+                  <li><a href="#profile" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Profile</div>
+                        </div>
+                      </div></a>
+                  </li>
+                   
+                </ul>
+              </div>
+              <div class="content-block-title">Side panels</div>
+              <div class="content-block">
+                <div class="row">
+                  <div class="col-50"><a href="#" data-panel="left" class="button open-panel">Left Panel</a></div>
+                  <div class="col-50"><a href="#" data-panel="right" class="button open-panel">Right Panel</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <!-- About Page-->
+          <div data-page="about" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <p>You may go <a href="#" class="back">back</a> or load <a href="#services">Services</a> page.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel commodo massa, eu adipiscing mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus ultricies dictum neque, non varius tortor fermentum at. Curabitur auctor cursus imperdiet. Nam molestie nisi nec est lacinia volutpat in a purus. Maecenas consectetur condimentum viverra. Donec ultricies nec sem vel condimentum. Phasellus eu tincidunt enim, sit amet convallis orci. Vestibulum quis fringilla dolor.    </p>
+                <p>Mauris commodo lacus at nisl lacinia, nec facilisis erat rhoncus. Sed eget pharetra nunc. Aenean vitae vehicula massa, sed sagittis ante. Quisque luctus nec velit dictum convallis. Nulla facilisi. Ut sed erat nisi. Donec non dolor massa. Mauris malesuada dolor velit, in suscipit leo consectetur vitae. Duis tempus ligula non eros pretium condimentum. Cras sed dolor odio.</p>
+                <p>Suspendisse commodo adipiscing urna, a aliquet sem egestas in. Sed tincidunt dui a magna facilisis bibendum. Nunc euismod consectetur lorem vitae molestie. Proin mattis tellus libero, non hendrerit neque eleifend ac. Pellentesque interdum velit at lacus consectetur scelerisque et id dui. Praesent non fringilla dui, a elementum purus. Proin vitae lacus libero. Nunc eget lectus non mi iaculis interdum vel a velit. Nullam tincidunt purus id lacus ornare, at elementum turpis euismod. Cras mauris enim, congue eu nisl sit amet, pulvinar semper erat. Suspendisse sed mauris diam.</p>
+                <p>Nam eu mauris leo. Pellentesque aliquam vehicula est, sed lobortis tellus malesuada facilisis. Fusce at hendrerit ligula. Donec eu nibh convallis, pulvinar enim quis, lacinia diam. Ut semper ac magna nec ornare. Integer placerat justo sed nunc suscipit facilisis. Vestibulum ac tincidunt augue. Duis eu aliquet mauris, vel luctus mauris. Nulla non augue nec diam pharetra posuere at in mauris.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Services Page-->
+          <div data-page="stories" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <!--<p>You may go <a href="#" class="back">back</a> or load <a href="#about">About</a> page.</p>-->
+                <div id = "latestlist" data-role="content"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Settings Page-->
+          <div data-page="settings" class="page cached">
+            <div class="page-content">
+             <!-- <div class="content-block-title">Connectivity Status</div>-->
+              <div id="status"></div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-name"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">URL</div>
+                        <div class="item-input">
+                         <input id="baseurl" type="text" value=""></input>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-email"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">View</div>
+                        <div class="item-input">
+                          <input id="view" type="text" value=""></input>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-url"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Display</div>
+                        <div class="item-input">
+                          <input id="display" type="text"value=""></input>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="content-block">
+                <div class="row">
+                  <div class="col-50"><a href="#" class="button button-big button-fill color-red back link">Cancel</a></div>
+                  <div class="col-50">
+                   
+                    <input type="submit" value="Submit" onclick="saveSettings();" class="button button-big button-fill color-green">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <!-- Profile Page-->
+          <div data-page="profile" class="page cached">
+            <div class="page-content">
+              <!--<div class="content-block-title">My Profile</div>-->
+              <div id="logmsg"></div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-name"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">User ID</div>
+                        <div class="item-input">
+                          <input id="username" type="text"></input>
+                        </div>
+                         
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-email"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Password</div>
+                        <div class="item-input">
+                          <input id="password" type="password"></input>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                </ul>
+              </div>
+              <div class="content-block">
+                <div class="row">
+                  <div class="col-50"><a href="#" class="button button-big button-fill color-red back link">Cancel</a></div>
+                  <div class="col-50">
+                   
+                    <input type="submit" value="Login"  onclick="saveLogin();" class="button button-big button-fill color-green">
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        <!-- Bottom Toolbar-->
+        <div class="toolbar">
+          <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/inline-app.js"></script>
+     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    
+    <script type="text/javascript" src="base.js"></script>
+  </body>
+</html>
